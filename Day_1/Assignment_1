@@ -8,5 +8,6 @@ int main()
     scanf("%f", &num);
     sum = num / 2 * (1 + num);
     printf("%d", sum);
+
     return 0;
 }
