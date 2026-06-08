@@ -1,21 +1,29 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, sum=0;
+    int n, temp, r, sum = 0, fact, i;
 
-    printf("Enter number");
+    printf("Enter a number: ");
     scanf("%d", &n);
 
-    for(i = 1; i <= n/2; i++) {
-        if(n % i == 0) {
-            sum = sum + i;
+    temp = n;
+
+    while (temp > 0) {
+        r = temp % 10;
+
+        fact = 1;
+        for (i = 1; i <= r; i++) {
+            fact = fact*i;
         }
+
+        sum = sum+fact;
+        temp = temp/10;
     }
-    if(sum == n) {
-        printf("%d is a Perfect Number\n", n);
-    } else {
-        printf("%d is not a Perfect Number\n", n);
-    }
+
+    if (sum == n)
+        printf("%d is a Strong Number\n", n);
+    else
+        printf("%d is not a Strong Number\n", n);
 
     return 0;
 }
